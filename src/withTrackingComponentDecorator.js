@@ -13,7 +13,7 @@ export default function withTrackingComponentDecorator(
     const decoratedComponentName =
       DecoratedComponent.displayName || DecoratedComponent.name || 'Component';
 
-    function WithTracking({ rtFwdRef, ...props }) {
+    function WithTracking({ rtFwdRef = undefined, ...props }) {
       const latestProps = useRef(props);
 
       useEffect(() => {
@@ -73,7 +73,6 @@ export default function withTrackingComponentDecorator(
         PropTypes.shape({ current: PropTypes.any }),
       ]),
     };
-    WithTracking.defaultProps = { rtFwdRef: undefined };
 
     hoistNonReactStatics(WithTracking, DecoratedComponent);
     return WithTracking;

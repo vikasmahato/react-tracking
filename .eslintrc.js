@@ -10,6 +10,7 @@ module.exports = {
     'prettier/prettier': 'error',
     'react-hooks/rules-of-hooks': 'error',
     'react-hooks/exhaustive-deps': 'warn',
+    'react/require-default-props': 'off',
     'react/jsx-filename-extension': [
       1,
       {
